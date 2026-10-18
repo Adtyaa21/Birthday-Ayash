@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AYASH'S SECRET GIFT ✨</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", system-ui, sans-serif;
+    color: #4c3554;
+    background: linear-gradient(135deg, #fff7fb, #ffd9e9);
+    transition: background 0.5s;
+}
+
+body.s2 {
+    background: radial-gradient(circle at top, #4b3a77, #17152f 75%);
+    color: #fff5ff;
+}
+
+body.s3 {
+    background: linear-gradient(135deg, #ffe6ed, #ffc6d5, #fff0f5);
+}
+
+.sparkles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.sparkles span {
+    position: absolute;
+    animation: float 6s infinite;
+    font-size: 24px;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-20px) rotate(12deg);
+    }
+}
+
+.wrap {
+    width: min(92%, 650px);
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    width: 100%;
+    text-align: center;
+    border-radius: 28px;
+    padding: clamp(22px, 6vw, 40px);
+    background: #ffffffd9;
+    border: 2px solid #ffffffeb;
+    box-shadow: 0 20px 60px #6f366424;
+    backdrop-filter: blur(8px);
+    animation: appear 0.5s;
+}
+
+.s2 .card {
+    background: #191636e8;
+    border-color: #e2ccff55;
+    color: #fff5ff;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+h1 {
+    font-size: clamp(2rem, 8vw, 3.3rem);
+    line-height: 1.06;
+    margin: 16px 0;
+    overflow-wrap: anywhere;
+}
+
+h2 {
+    font-size: clamp(1.3rem, 5vw, 1.9rem);
+    margin: 12px 0;
+}
+
+p {
+    line-height: 1.7;
+}
+
+.big {
+    font-size: 4rem;
+    margin: 8px;
+}
+
+.eyebrow {
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    opacity: 0.75;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #e8b5cd;
+    opacity: 0.5;
+}
+
+.dot.on {
+    opacity: 1;
+    transform: scale(1.2);
+    background: #ff6f9f;
+}
+
+.pill {
+    display: inline-block;
+    padding: 9px 13px;
+    border-radius: 999px;
+    background: #fff0f6;
+    color: #a03d72;
+    font-weight: 800;
+}
+
+.btn {
+    border: 0;
+    border-radius: 999px;
+    padding: 15px 22px;
+    margin-top: 16px;
+    min-width: 190px;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #512541;
+    background: linear-gradient(135deg, #ff9fc5, #ff6f9f);
+    box-shadow: 0 7px 0 #d95a8b;
+}
+
+.btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 4px 0 #d95a8b;
+}
+
+.s2 .btn {
+    background: linear-gradient(135deg, #e6c7ff, #a995ff);
+    box-shadow: 0 7px 0 #7863bf;
+    color: #30204f;
+}
+
+.btn:disabled {
+    opacity: 0.75;
+    cursor: default;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* FOTO AYASH SEBAGAI BACKGROUND SMALL MESSAGE */
+
+.photo-message {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 430px;
+    margin: 24px 0 8px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #d5b2ff;
+    display: flex;
+    align-items: stretch;
+    background: #19132d;
+}
+
+/* GAMBAR MENGGUNAKAN NAMA BARU */
+
+.photo-message img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+}
+
+/* LAPISAN GELAP TRANSPARAN */
+
+.photo-message::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 13, 38, 0.70);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* TULISAN DI ATAS FOTO */
+
+.message {
+    position: relative;
+    width: 100%;
+    padding: 22px 17px;
+    text-align: left;
+    color: #ffffff;
+    text-shadow: 0 1px 4px #000000;
+}
+
+.message .title {
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: 0.13em;
+    margin-bottom: 18px;
+}
+
+.message p {
+    font-size: 0.94rem;
+    margin: 12px 0;
+    line-height: 1.75;
+}
+
+.voucher {
+    margin: 22px auto 10px;
+    max-width: 420px;
+    padding: 24px 17px;
+    border: 2px dashed #ff7197;
+    border-radius: 22px;
+    background: #fffafc;
+    color: #63334a;
+}
+
+.amount {
+    font-size: clamp(2.8rem, 11vw, 4rem);
+    font-weight: 1000;
+    color: #ed477a;
+    margin: 8px 0;
+}
+
+.fine {
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+
+.code {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 12px;
+    background: #fff0f5;
+    border: 1px solid #ffc1d5;
+    color: #9b2854;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin: 8px;
+    overflow-wrap: anywhere;
+}
+
+.footer {
+    margin-top: 23px;
+    font-size: 0.76rem;
+    opacity: 0.65;
+}
+
+@media (max-width: 420px) {
+    .wrap {
+        width: 94%;
+    }
+
+    .card {
+        padding: 23px 17px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .photo-message {
+        min-height: 490px;
+    }
+
+    .message {
+        padding: 17px 13px;
+    }
+
+    .message p {
+        font-size: 0.88rem;
+    }
+}
+</style>
+</head>
+
+<body class="s1">
+
+<div class="sparkles">
+    <span style="left:8%;top:10%">✦</span>
+    <span style="left:82%;top:14%;animation-delay:1s">✧</span>
+    <span style="left:14%;top:76%;animation-delay:2s">✨</span>
+    <span style="left:88%;top:70%;animation-delay:1.5s">✦</span>
+    <span style="left:48%;top:5%;animation-delay:2.5s">✧</span>
+    <span style="left:70%;top:88%;animation-delay:3s">✨</span>
+</div>
+
+<main class="wrap">
+
+    <!-- HALAMAN 1 -->
+
+    <section class="card" id="p1">
+
+        <div class="dots">
+            <i class="dot on"></i>
+            <i class="dot"></i>
+            <i class="dot"></i>
+        </div>
+
+        <div class="big">🎀✨</div>
+
+        <div class="eyebrow">a tiny birthday surprise</div>
+
+        <h1>FARRAS IKHLASULIA AMALTA</h1>
+
+        <h2>Happy 18th Birthday!!</h2>
+
+        <p>Akuu masih ada hadiah kecil buat kamuu yassh🥳</p>
+
+        <div class="pill">
+            ✨ Are you ready for a little surprise? 🥶😈
+        </div>
+
+        <br>
+
+        <button class="btn" onclick="go(2)">
+            PRESS AND NEXT ✨
+        </button>
+
+        <div class="footer">
+            Ayash ketauan tuh keponyaa😏😛
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN 2 -->
+
+    <section class="card hidden" id="p2">
+
+        <div class="dots">
+            <i class="dot"></i>
+            <i class="dot on"></i>
+            <i class="dot"></i>
+        </div>
+
+        <div class="big">🕵️‍♀️🔮</div>
+
+        <div class="eyebrow">birthday message file</div>
+
+        <h1>HI AYAASH!</h1>
+
+        <h2>Hope your 18th birthday is as amazing as the person you are</h2>
+
+        <div class="photo-message">
+
+            <img
+                src="./ayash_photo.png"
+                alt="Foto Ayash"
+            >
+
+            <div class="message">
+
+                <div class="title">
+                    ✨ SMALL MESSAGE ✨
+                </div>
+
+                <p>
+                    <b>HBDDD AYASSSH,</b> maaf yak kalo keliatan
+                    alay WKWKWK😭 (alay sekali-kali gapapa lah yaa)
+                </p>
+
+                <p>
+                    swslamat 18 yer ol yaash, semoga panjang umurrr,
+                    sehatt selalu, nilai TKA nyaa ISTIMEWAAA✨,
+                    LOLOS MANAJEMEN KEBIJAKAN PUBLIK (MKP) UGM🔥
+                </p>
+
+                <p>
+                    terus jadi tinggian dikit, tidurnya jadi teratur (ga yakin kalo ini),
+                    kuat angkat 2 galon sekaligus, jadi ahli karate hiak hius
+                    tash bug kedebug, makin lincah manjat manjat, anddd udah 
+                    bisa pakai diskon pay latter yeyyy wkwkwwk😭
+                </p>
+                    I hope ur special day is filled with happiness, laughter, and beautiful memories.
+                    Always stay true to urself, keep chasing your dreams, anddd never forget how amazing you are.
+                    You deserve all the beautiful things in life Ayasszzh🥶
+
+                <p>
+                    <b>WKWKWKWK MAKIN BAIK DAH AYASSH POKONYA 🔥✨</b>
+                </p>
+
+            </div>
+        </div>
+
+        <button class="btn" onclick="go(3)">
+            PRESS AND NEXT ✨
+        </button>
+
+        <div class="footer">
+            Ayashh habis baca ini tingginya naik 1 cm😹✌️
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN 3 -->
+
+    <section class="card hidden" id="p3">
+
+        <div class="dots">
+            <i class="dot"></i>
+            <i class="dot"></i>
+            <i class="dot on"></i>
+        </div>
+
+        <div class="big">🎉🍗🍚</div>
+
+        <div class="eyebrow">last</div>
+
+        <h1>CONGRATULATIONS AYASH!</h1>
+
+        <h2>you get a small gift!</h2>
+
+        <div class="voucher">
+
+            <div class="eyebrow">
+                🎁 special birthday reward 🎁
+            </div>
+
+            <h2>VOUCHER NASI AYAM CERIA</h2>
+
+            <div class="amount">Rp12.000</div>
+
+            <p class="fine">
+                Voucher hadiah ulang tahun • 1 kali klaim
+            </p>
+
+            <hr style="border:0;border-top:1px dashed #ffc1d5;margin:18px 0">
+
+            <p style="font-weight:900">
+                be cheerful like a cheerful chicken rice Ayazh ✌️
+            </p>
+
+        </div>
+
+        <p>
+            screenshot atau copy code ini dan kirimkan ke Aditdut!😹✌️
+        </p>
+
+        <button class="btn" id="claim" onclick="reveal()">
+            KLAIM HADIAH 🎁
+        </button>
+
+        <div id="claimArea" class="hidden">
+
+            <div class="code" id="claimCode">
+                AYASH04N08-18
+            </div>
+
+            <br>
+
+            <button class="btn" onclick="copyCode()">
+                SALIN KODE
+            </button>
+
+            <p id="status"></p>
+
+        </div>
+
+        <div class="footer">
+            A Little Mischief, and Nasi Ayam Ceria buat Ayaash!✌️
+        </div>
+
+    </section>
+
+</main>
+
+<script>
+function go(n) {
+    document.querySelectorAll("main section").forEach(section => {
+        section.classList.add("hidden");
+    });
+
+    document.getElementById("p" + n).classList.remove("hidden");
+
+    document.body.className = "s" + n;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+function reveal() {
+    document.getElementById("claimArea").classList.remove("hidden");
+
+    document.getElementById("claim").textContent =
+        "KODE BERHASIL DIBUKA ✓";
+
+    document.getElementById("claim").disabled = true;
+}
+
+async function copyCode() {
+    const code = document.getElementById("claimCode").textContent.trim();
+    const status = document.getElementById("status");
+
+    try {
+        await navigator.clipboard.writeText(code);
+        status.textContent = "Kode berhasil disalin! ✨";
+    } catch (error) {
+        status.textContent = "Salin manual: " + code;
+    }
+}
+</script>
+
+</body>
+</html>
